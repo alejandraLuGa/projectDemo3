@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image:url(http://www.acsu.buffalo.edu/~mengchun/dw.jpg);
+    /* text-align: center */
+    margin:0
+}
+
+
+h1 {
+    font-weight: bold;
+    color: rgb(247, 247, 247);
+    font-size: 30px;
+    text-align: center;
+}
+
+h2 {
+    /* font-weight: bold; */
+    color: rgb(204, 204, 204);
+    font-size: 25px;
+    text-align: center;
+}
+
+h3 {
+    /* font-weight: bold; */
+    color: rgb(204, 204, 204);
+    font-size: 23px;
+    text-align: center;
+}
+
+
+a {
+    color: white;
+    font-size: 18px;
+}
+
+.list {
+    background-color : #777777;
+    border: 1px ridge rgb(0, 0, 0);
+    border-radius : 25px;
+    clear : both;
+    margin : 0% auto;
+    padding : 1%;
+    width : 50%;
+    margin-bottom: 25px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#first {
+    float: left;
+}
+
+#first a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+#first a:hover {
+    background-color: #111;
+}
+
+#p11 {
+    text-align: center;
+    font-size: 1.4em;
+
+}
+
+#set {
+    text-align: center;
+}
+
+#rank{
+    text-align: left;
+    font-size: 20px;
+}
+
+
+#feedback { font-size: 1.4em; }
+#selectable .ui-selecting { background: #FECA40; border: 1px ridge rgb(0, 0, 0);
+    border-radius : 25px; border: 1px ridge rgb(0, 0, 0);
+    border-radius : 25px;}
+#selectable .ui-selected { background: #F39814; color: white; border: 1px ridge rgb(0, 0, 0);
+    border-radius : 25px;}
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; border: 1px ridge rgb(0, 0, 0);
+    border-radius : 25px;}
+
+
+#clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: right;
+    font-size: 30px;
+}
+
+#clockdiv > #timediv {
+    padding: 10px;
+    border-radius: 3px;
+    background: #9fa5a3;
+    display: inline-block;
+}
+
+#clockdiv #timediv > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #353837;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 16px;
+}
+
+#num{
+    text-align: right;
+}
+
+#pdiv {
+    float:right;
+}

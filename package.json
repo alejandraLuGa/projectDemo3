@@ -1,0 +1,22 @@
+{
+  "name": "json",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandraLuGa/Project1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alejandraLuGa/Project1/issues"
+  },
+  "homepage": "https://github.com/alejandraLuGa/Project1#readme",
+  "devDependencies": {
+    "electron": "^5.0.1"
+  }
+}
