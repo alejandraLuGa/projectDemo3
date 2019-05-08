@@ -8,7 +8,7 @@ function typename(){
     element.removeChild(h3);
     element.removeChild(a);
     //add elements
-    //<textarea rows="2" id="name1"></textarea>
+    //<textarea rows="1" id="name1"></textarea>
     var x = document.createElement("TEXTAREA");
     x.setAttribute("id", "name1");
     x.setAttribute("rows", "1");

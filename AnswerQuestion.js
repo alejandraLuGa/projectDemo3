@@ -125,7 +125,7 @@ function AnswerQuestion(){
 
     var pdiv = document.createElement("div");
     pdiv.setAttribute("id", "pdiv");
-    clockdiv.appendChild(pdiv);
+    set.appendChild(pdiv);
 
 
 
@@ -156,11 +156,6 @@ function AnswerQuestion(){
     k.setAttribute("onclick","checkAnswer(answerid, qAndA(),counter);nextpage()");
     set.appendChild(k);
     document.getElementById("submita").value = "Submit";
-
-
-
-    //after clicking submit
-
 
 
 }

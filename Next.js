@@ -1,22 +1,21 @@
 function NextQuestion(){
-    var count = increment();
+    increment();
     var h2 = document.getElementById("h2");
     var p = document.getElementById("p11");
-    var submita = document.getElementById("submita");
-    var submit = document.getElementById("submit");
+
+    var submit0 = document.getElementById("submit"+String(counter-1));
     var submitnext = document.getElementById("submitnext");
     var pdiv = document.getElementById("pdiv");
     var num = document.getElementById("num");
     var num2 = document.getElementById("num2");
     var set = document.getElementById("set");
-    var form11 = document.getElementById("form1");
+    var form11 = document.getElementById("form"+String(counter-1));
 
 
     //delete elements
     set.removeChild(form11);
     set.removeChild(submitnext);
-    set.removeChild(submita);
-    set.removeChild(submit);
+    set.removeChild(submit0);
 
 
 
@@ -24,22 +23,22 @@ function NextQuestion(){
     //get list of all the questions
 
     var questionslist = qAndA();
-    var questionmap = questionslist[count-1];
+    var questionmap = questionslist[counter-1];
 
     //change elements
     p.innerHTML = questionmap["question"];
-    h2.innerHTML = "Question "+String(count)+":";
-    num.innerHTML = String(count)+"/20";
+    h2.innerHTML = "Question "+String(counter)+":";
+    num.innerHTML = String(counter)+"/20";
 
     //loop all the elements in the choices list
 
     var form1 = document.createElement("FORM");
-    form1.setAttribute("id", "form1");
+    form1.setAttribute("id", "form"+String(counter));
     set.appendChild(form1);
 
     var fdiv = document.createElement("div");
     fdiv.setAttribute("id", "botton");
-    var form11 = document.getElementById("form1");
+    var form11 = document.getElementById("form"+String(counter));
     form11.appendChild(fdiv);
 
 
@@ -127,12 +126,9 @@ function NextQuestion(){
 
     var k = document.createElement("INPUT");
     k.setAttribute("type", "submit");
-    k.setAttribute("id", "submit");
+    k.setAttribute("id", "submit"+String(counter));
     k.setAttribute("onclick","checkAnswer(answerid, qAndA(),counter);nextpage()");
     set.appendChild(k);
-    document.getElementById("submit").value = "Submit";
-
-
-
+    document.getElementById("submit"+String(counter)).value = "Submit";
 
 }
