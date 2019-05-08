@@ -8,9 +8,10 @@ function typename(){
     element.removeChild(h3);
     element.removeChild(a);
     //add elements
-    var x = document.createElement("INPUT");
+    //<textarea rows="2" id="name1"></textarea>
+    var x = document.createElement("TEXTAREA");
     x.setAttribute("id", "name1");
-    x.setAttribute("type", "text");
+    x.setAttribute("rows", "1");
 
     element.appendChild(x);
 
