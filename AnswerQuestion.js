@@ -24,46 +24,103 @@ function AnswerQuestion(){
     set.appendChild(p);
 
 
-    var ol = document.createElement("OL");
-    ol.setAttribute("id", "selectable");
-    set.appendChild(ol);
+    var form1 = document.createElement("FORM");
+    form1.setAttribute("id", "form1");
+    set.appendChild(form1);
+
+    var fdiv = document.createElement("div");
+    fdiv.setAttribute("id", "botton");
+    var form11 = document.getElementById("form1");
+    form11.appendChild(fdiv);
 
 
 
     //loop all the elements in the choices list
 
 
-    var y = document.createElement("LI");
-    y.setAttribute("id", "y1");
-    y.setAttribute("value", questionmap["choices"][0]);
-    y.setAttribute("onclick", "myfunc(this)");
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l1");
     var t = document.createTextNode(questionmap["choices"][0]);
     y.appendChild(t);
-    document.getElementById("selectable").appendChild(y);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y1");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][0]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
 
-    var y = document.createElement("LI");
-    y.setAttribute("id", "y2");
-    y.setAttribute("value", questionmap["choices"][1]);
-    y.setAttribute("onclick", "myfunc(this)");
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l2");
     var t = document.createTextNode(questionmap["choices"][1]);
     y.appendChild(t);
-    document.getElementById("selectable").appendChild(y);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y2");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][1]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
 
-    var y = document.createElement("LI");
-    y.setAttribute("id", "y3");
-    y.setAttribute("value", questionmap["choices"][2]);
-    y.setAttribute("onclick", "myfunc(this)");
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+    br.setAttribute("id", "brr");
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+    br.setAttribute("id", "brr");
+
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l3");
     var t = document.createTextNode(questionmap["choices"][2]);
     y.appendChild(t);
-    document.getElementById("selectable").appendChild(y);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y3");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][2]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
 
-    var y = document.createElement("LI");
-    y.setAttribute("id", "y4");
-    y.setAttribute("value", questionmap["choices"][3]);
-    y.setAttribute("onclick", "myfunc(this)");
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l4");
     var t = document.createTextNode(questionmap["choices"][3]);
     y.appendChild(t);
-    document.getElementById("selectable").appendChild(y);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y4");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][3]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
 
 
     var pdiv = document.createElement("div");
@@ -113,11 +170,7 @@ function AnswerQuestion(){
 
 }
 
-var answerid = "ggg"
 
-function myfunc(e){
-    var x = e.getAttribute('value');
-    answerid = x;
-}
+
 
 

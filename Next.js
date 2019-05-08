@@ -2,21 +2,20 @@ function NextQuestion(){
     var count = increment();
     var h2 = document.getElementById("h2");
     var p = document.getElementById("p11");
-    var y1 = document.getElementById("y1");
-    var y2 = document.getElementById("y2");
-    var y3 = document.getElementById("y3");
-    var y4 = document.getElementById("y4");
     var submit1 = document.getElementById("submit");
     var submitnext = document.getElementById("submitnext");
     var pdiv = document.getElementById("pdiv");
     var num = document.getElementById("num");
     var num2 = document.getElementById("num2");
     var set = document.getElementById("set");
-    var ol = document.getElementById("selectable");
+    var form11 = document.getElementById("form1");
+
 
     //delete elements
+    set.removeChild(form11);
     set.removeChild(submitnext);
     set.removeChild(submit1);
+
 
 
 
@@ -32,21 +31,89 @@ function NextQuestion(){
 
     //loop all the elements in the choices list
 
-    y1.innerHTML = questionmap["choices"][0];
-    y1.setAttribute("value", questionmap["choices"][0]);
-    y2.innerHTML = questionmap["choices"][1];
-    y2.setAttribute("value", questionmap["choices"][1]);
-    y3.innerHTML = questionmap["choices"][2];
-    y3.setAttribute("value", questionmap["choices"][2]);
-    y4.innerHTML = questionmap["choices"][3];
-    y4.setAttribute("value", questionmap["choices"][3]);
+    var form1 = document.createElement("FORM");
+    form1.setAttribute("id", "form1");
+    set.appendChild(form1);
+
+    var fdiv = document.createElement("div");
+    fdiv.setAttribute("id", "botton");
+    var form11 = document.getElementById("form1");
+    form11.appendChild(fdiv);
+
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l1");
+    var t = document.createTextNode(questionmap["choices"][0]);
+    y.appendChild(t);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y1");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][0]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l2");
+    var t = document.createTextNode(questionmap["choices"][1]);
+    y.appendChild(t);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y2");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][1]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l3");
+    var t = document.createTextNode(questionmap["choices"][2]);
+    y.appendChild(t);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y3");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][2]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+
+    var y = document.createElement("LABEL");
+    y.setAttribute("id", "l4");
+    var t = document.createTextNode(questionmap["choices"][3]);
+    y.appendChild(t);
+    form11.appendChild(y);
+    var i = document.createElement("INPUT");
+    i.setAttribute("id", "y4");
+    i.setAttribute("type", "radio");
+    i.setAttribute("name", questionmap["choices"][3]);
+    i.setAttribute("onclick", "myfunc(this)");
+    form11.appendChild(i);
+
+    var br = document.createElement("BR");
+    form11.appendChild(br);
+    var br = document.createElement("BR");
+    form11.appendChild(br);
 
 
 
-    function myfunc(e){
-        var x = e.getAttribute('value');
-        answerid = x;
-    }
 
     //How many questions left?
 
@@ -63,11 +130,10 @@ function NextQuestion(){
     set.appendChild(k);
     document.getElementById("submit").value = "Submit";
 
-    $( function() {
-        $( "#selectable" ).selectable();
-    } );
+
 
 
 }
+
 
 

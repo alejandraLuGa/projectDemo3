@@ -24,5 +24,5 @@ function typename(){
     y.setAttribute("id", "submit01");
     y.setAttribute("onclick", "AnswerQuestion()");
     element.appendChild(y);
-    document.getElementById("submit").value = "Submit!";
+    document.getElementById("submit01").value = "Submit!";
 }

@@ -43,6 +43,16 @@ a {
     width : 50%;
     margin-bottom: 25px;
 }
+form {
+    color: "black";
+    font-size: 23px;
+    text-align: center;
+}
+#l1,#l2,#l3,#l4 {
+    color: "black";
+    font-size: 23px;
+    text-align: center;
+}
 
 
 ul {
