@@ -15,8 +15,14 @@ function typename(){
 
     element.appendChild(x);
 
+    var z = document.createElement("DIV");
+    z.setAttribute("id", "divvalidate");
+
+    element.appendChild(z);
+
+
     var br = document.createElement("br");
-    element.appendChild(br);
+    br.setAttribute("id", "br");
     element.appendChild(br);
 
 
@@ -26,20 +32,4 @@ function typename(){
     y.setAttribute("onclick", "validateName()");
     element.appendChild(y);
     document.getElementById("submit01").value = "Submit!";
-}
-function validateName() {
-    var name = document.getElementById("name1").value;
-    if (name == "") {
-        alert("Please enter your Name");
-        document.getElementById("name1").focus();
-        return false;
-    }
-    else if(name == null){
-        alert("Please enter your Name");
-        document.getElementById("name1").focus();
-        return false;
-    }
-    else {
-        AnswerQuestion();
-    }
 }

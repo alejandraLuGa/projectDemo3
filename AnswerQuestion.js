@@ -146,16 +146,21 @@ function AnswerQuestion(){
     pdiv.appendChild(pnum);
     pdiv.appendChild(pnum2);
 
+
     // check answer
+
 
     var k = document.createElement("INPUT");
     k.setAttribute("type", "submit");
-    k.setAttribute("id", "submit");
+    k.setAttribute("id", "submita");
     k.setAttribute("onclick","checkAnswer(answerid, qAndA(),counter);nextpage()");
     set.appendChild(k);
-    document.getElementById("submit").value = "Submit";
+    document.getElementById("submita").value = "Submit";
+
+
+
+    //after clicking submit
+
 
 
 }
-
-

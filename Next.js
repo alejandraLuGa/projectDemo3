@@ -2,7 +2,8 @@ function NextQuestion(){
     var count = increment();
     var h2 = document.getElementById("h2");
     var p = document.getElementById("p11");
-    var submit1 = document.getElementById("submit");
+    var submita = document.getElementById("submita");
+    var submit = document.getElementById("submit");
     var submitnext = document.getElementById("submitnext");
     var pdiv = document.getElementById("pdiv");
     var num = document.getElementById("num");
@@ -14,7 +15,8 @@ function NextQuestion(){
     //delete elements
     set.removeChild(form11);
     set.removeChild(submitnext);
-    set.removeChild(submit1);
+    set.removeChild(submita);
+    set.removeChild(submit);
 
 
 
@@ -134,6 +136,3 @@ function NextQuestion(){
 
 
 }
-
-
-
