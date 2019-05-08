@@ -11,8 +11,6 @@ function nextpage(){
         set.appendChild(k0);
         document.getElementById("submitnext").value = "See Result";
     } else {
-
-
         var k1 = document.createElement("INPUT");
         k1.setAttribute("type", "submit");
         k1.setAttribute("id", "submitnext");
@@ -21,4 +19,3 @@ function nextpage(){
         document.getElementById("submitnext").value = "Next Question";
     }
 }
-
