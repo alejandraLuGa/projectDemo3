@@ -22,7 +22,23 @@ function typename(){
     var y = document.createElement("INPUT");
     y.setAttribute("type", "submit");
     y.setAttribute("id", "submit01");
-    y.setAttribute("onclick", "AnswerQuestion()");
+    y.setAttribute("onclick", "validateName()");
     element.appendChild(y);
     document.getElementById("submit01").value = "Submit!";
+}
+function validateName() {
+    var name = document.getElementById("name1").value;
+    if (name == "") {
+        alert("Please enter your Name");
+        document.getElementById("name1").focus();
+        return false;
+    }
+    else if(name == null){
+        alert("Please enter your Name");
+        document.getElementById("name1").focus();
+        return false;
+    }
+    else {
+        AnswerQuestion();
+    }
 }

@@ -44,12 +44,12 @@ a {
     margin-bottom: 25px;
 }
 form {
-    color: "black";
+    color: rgb(0,0,0);
     font-size: 23px;
     text-align: center;
 }
 #l1,#l2,#l3,#l4 {
-    color: "black";
+    color: rgb(0,0,0) ;
     font-size: 23px;
     text-align: center;
 }
@@ -100,14 +100,7 @@ ul {
 
 
 #feedback { font-size: 1.4em; }
-#selectable .ui-selecting { background: #FECA40; border: 1px ridge rgb(0, 0, 0);
-    border-radius : 25px; border: 1px ridge rgb(0, 0, 0);
-    border-radius : 25px;}
-#selectable .ui-selected { background: #F39814; color: white; border: 1px ridge rgb(0, 0, 0);
-    border-radius : 25px;}
-#selectable { list-style-type: none; margin: 0; padding: 0; width: 100%; }
-#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; border: 1px ridge rgb(0, 0, 0);
-    border-radius : 25px;}
+
 
 
 #clockdiv{

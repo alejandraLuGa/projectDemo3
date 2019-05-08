@@ -146,9 +146,7 @@ function AnswerQuestion(){
     pdiv.appendChild(pnum);
     pdiv.appendChild(pnum2);
 
-
     // check answer
-
 
     var k = document.createElement("INPUT");
     k.setAttribute("type", "submit");
@@ -158,19 +156,6 @@ function AnswerQuestion(){
     document.getElementById("submit").value = "Submit";
 
 
-
-    //after clicking submit
-
-
-
-    $( function() {
-        $( "#selectable" ).selectable();
-    } );
-
-
 }
-
-
-
 
 
