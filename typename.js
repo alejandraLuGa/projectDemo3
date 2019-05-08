@@ -21,7 +21,7 @@ function typename(){
 
     var y = document.createElement("INPUT");
     y.setAttribute("type", "submit");
-    y.setAttribute("id", "submit");
+    y.setAttribute("id", "submit01");
     y.setAttribute("onclick", "AnswerQuestion()");
     element.appendChild(y);
     document.getElementById("submit").value = "Submit!";
