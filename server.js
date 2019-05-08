@@ -3,7 +3,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io').listen(server);
 
-app.use('/css',express.static(__dirname + '/css'));
+app.use('/demo11.css',express.static(__dirname + '/demo11.css'));
 app.use('/js',express.static(__dirname + '/js'));
 app.use('/assets',express.static(__dirname + '/assets'));
 
@@ -27,12 +27,12 @@ io.on('connection',function(socket){
         socket.emit('allplayers',getAllPlayers());
         socket.broadcast.emit('newplayer',socket.player);
 
-        socket.on('click',function(data){
-            console.log('click to '+data.x+', '+data.y);
-            socket.player.x = data.x;
-            socket.player.y = data.y;
-            io.emit('move',socket.player);
-        });
+        // socket.on('click',function(data){
+        //     console.log('click to '+data.x+', '+data.y);
+        //     socket.player.x = data.x;
+        //     socket.player.y = data.y;
+        //     io.emit('move',socket.player);
+        // });
 
         socket.on('disconnect',function(){
             io.emit('remove',socket.player.id);
