@@ -16,7 +16,7 @@ function nextpage(){
         var k1 = document.createElement("INPUT");
         k1.setAttribute("type", "submit");
         k1.setAttribute("id", "submitnext");
-        k1.setAttribute("onclick", "Next()");
+        k1.setAttribute("onclick", "NextQuestion()");
         set.appendChild(k1);
         document.getElementById("submitnext").value = "Next Question";
     }
