@@ -1,6 +1,5 @@
 var answerid = "ggg";
 
-
 function myfunc(e){
     var x = e.getAttribute("class");
     answerid = x;
