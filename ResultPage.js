@@ -2,56 +2,31 @@ function final(){
     var abc = document.getElementById("abc");
     var h2 = document.getElementById("h2");
     var p = document.getElementById("p11");
-    var ol = document.getElementById("selectable");
+    var form = document.getElementById("form"+String(counter));
     var clockdiv = document.getElementById("clockdiv");
-    var submit = document.getElementById("submit");
+    var submitt = document.getElementById("submit"+String(counter));
     var submitnext = document.getElementById("submitnext");
-    var element = document.getElementById("set");
+    var set = document.getElementById("set");
     //delete elements
     h2.innerHTML = "Ranking";
-    element.removeChild(ol);
-    element.removeChild(p);
-    element.removeChild(submit);
-    element.removeChild(submitnext);
-
-    var oll = document.createElement("OL");
-    oll.setAttribute("id", "rank");
-    element.appendChild(oll);
-
-    var y = document.createElement("LI");
-    var t1 = document.createTextNode(String(document.getElementById("name1").value) + "   "+"(Score: "+score+")");
-    y.appendChild(t1);
-    document.getElementById("rank").appendChild(y);
-
-    var y = document.createElement("LI");
-    var t2 = document.createTextNode("Player 2"+ "   "+"(Score:   )");
-    y.appendChild(t2);
-    document.getElementById("rank").appendChild(y);
-
-    var y = document.createElement("LI");
-    var t2 = document.createTextNode("Player 3"+ "   "+"(Score:   )");
-    y.appendChild(t2);
-    document.getElementById("rank").appendChild(y);
-
-    var y = document.createElement("LI");
-    var t2 = document.createTextNode("Player 4"+ "   "+"(Score:   )");
-    y.appendChild(t2);
-    document.getElementById("rank").appendChild(y);
-
-    var y = document.createElement("LI");
-    var t2 = document.createTextNode("Player 5"+ "   "+"(Score:   )");
-    y.appendChild(t2);
-    document.getElementById("rank").appendChild(y);
-
-
-    var k = document.createElement("INPUT");
-    k.setAttribute("type", "submit");
-    k.setAttribute("id", "submit");
-    k.setAttribute("onclick", "window.location.href='http://www.acsu.buffalo.edu/~ytsang/demo11.html'");
-    element.appendChild(k);
-    document.getElementById("submit").value = "Restart";
-
+    set.removeChild(form);
+    set.removeChild(p);
+    set.removeChild(submitt);
+    set.removeChild(submitnext);
     abc.removeChild(clockdiv);
 
+    var ol = document.createElement("OL");
+    ol.setAttribute("id", "rank");
+    set.appendChild(ol);
+
+    var y1 = document.createElement("LI");
+    var t1 = document.createTextNode(String(document.getElementById("name1").value) + "   "+"(Score: "+score+")");
+    y1.appendChild(t1);
+    document.getElementById("rank").appendChild(y1);
+
+    var y2 = document.createElement("LI");
+    var t2 = document.createTextNode("Player 2"+ "   "+"(Score:   )");
+    y2.appendChild(t2);
+    document.getElementById("rank").appendChild(y2);
 
 }
