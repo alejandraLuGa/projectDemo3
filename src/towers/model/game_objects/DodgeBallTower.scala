@@ -49,7 +49,7 @@ class DodgeBallTower(val x: Int, val y: Int) extends GameObject {
         projectileList = List (new Projectile(new PhysicsVector(midX, midY, height), new PhysicsVector(projectileVelocity * ((closestPlayer.location.x-midX)/smallestDist),projectileVelocity * ((closestPlayer.location.y-midY)/smallestDist))))
       }
     }
-    println(projectileList)
+    //println(projectileList)
     projectileList
   }
 

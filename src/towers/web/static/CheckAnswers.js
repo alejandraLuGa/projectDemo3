@@ -1,4 +1,8 @@
-//const sum = require ('./qAndA')
+
+var socket = io.connect("http://localhost:8080");
+socket.on('gameState', functScore);
+
+
 var score = 0
 
 function checkAnswer (answer,list1,c) {
@@ -6,6 +10,19 @@ function checkAnswer (answer,list1,c) {
       score+= 5
     }
 }
+
+function functScore(event) {
+    const gameState = JSON.parse(event);
+    var amountOfPlay  = gameState["baseHealth"];
+    if (amountOfPlay === "" || amountOfPlay == null){
+        amountOfPlay = 0
+    }
+    document.getElementById("playerNumber").innerHTML = "Players Online: " + amountOfPlay;
+    //alert (amountOfPlay);
+}
+
+
+
 //module.exports = checkAnswer();
 //**testing for checkAnswer()**
 //var list1 = qAndA ();

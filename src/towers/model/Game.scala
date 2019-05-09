@@ -18,6 +18,7 @@ class Game {
   var level: Level = new Level()
 
   var players: Map[String, Player] = Map()
+  var playersScores: Map [Player, Int] = Map ()
   val playerSize: Double = 0.3
 
   var lastUpdateTime: Long = System.nanoTime()
@@ -55,6 +56,11 @@ class Game {
   def removePlayer(id: String): Unit = {
     players(id).destroy()
     players -= id
+  }
+
+  def addScore(id: String, score: Int): Unit = {
+    val player = new Player(startingVector(), new PhysicsVector(0, 0))
+    playersScores += (player -> score )
   }
 
   def blockTile(x: Int, y: Int, width: Int = 1, height: Int = 1): Unit = {
@@ -108,8 +114,20 @@ class Game {
 
   def gameState(): String = {
     val gameState: Map[String, JsValue] = Map(
-      "time" -> Json.toJson(timer),
-      "NumPlay" -> Json.toJson (players.size)
+      "gridSize" -> Json.toJson(Map("x" -> level.gridWidth, "y" -> level.gridHeight)),
+      "start" -> Json.toJson(Map("x" -> level.startingLocation.x, "y" -> level.startingLocation.y)),
+      "base" -> Json.toJson(Map("x" -> level.base.x, "y" -> level.base.y)),
+      "baseHealth" -> Json.toJson(this.players.size.toString),
+      "maxBaseHealth" -> Json.toJson(level.maxBaseHealth),
+      "walls" -> Json.toJson(this.walls.map({ w => Json.toJson(Map("x" -> w.x, "y" -> w.y)) })),
+      "towers" -> Json.toJson(this.towers.map({ t => Json.toJson(Map("x" -> t.x, "y" -> t.y)) })),
+      "players" -> Json.toJson(this.players.map({ case (k, v) => Json.toJson(Map(
+        "x" -> Json.toJson(v.location.x),
+        "y" -> Json.toJson(v.location.y),
+        "v_x" -> Json.toJson(v.velocity.x),
+        "v_y" -> Json.toJson(v.velocity.y),
+        "id" -> Json.toJson(k))) })),
+      "projectiles" -> Json.toJson(this.projectiles.map({ po => Json.toJson(Map("x" -> po.location.x, "y" -> po.location.y)) })),
     )
 
     Json.stringify(Json.toJson(gameState))

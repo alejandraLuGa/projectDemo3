@@ -27,6 +27,11 @@ h3 {
     text-align: center;
 }
 
+h4{
+    color: rgb(247, 247, 247);
+    text-align: left;
+    padding: 0px 10px 0px;
+}
 
 a {
     color: white;

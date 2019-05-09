@@ -56,6 +56,11 @@ def disconnect():
     message = {"username": request.sid, "action": "disconnected"}
     send_to_scala(message)
 
+# @socket_server.on('score')
+# def score():
+#     print(request.sid + " score")
+#     message = {"username": request.sid, "action": "score"}
+#     send_to_scala(message)
 
 @socket_server.on('keyStates')
 def key_state(jsonKeyStates):

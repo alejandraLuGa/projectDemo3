@@ -1,6 +1,3 @@
-var socket = io.connect("http://localhost:8080");
-socket.on('gameState', parseGameState);
-
 
 function nextpage(){
     var set = document.getElementById("set");
@@ -25,12 +22,3 @@ function nextpage(){
 }
 
 
-function parseGameState(event){
-    const gameState = JSON.parse(event);
-    var time  = gameState["time"];
-    var numP = gameState["NumPlay"];
-    console.log(time);
-    if (time === 60000){
-        nextpage()
-    }
-}

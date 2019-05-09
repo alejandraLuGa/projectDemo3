@@ -6,7 +6,6 @@ import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.io.{IO, Tcp}
 import akka.util.ByteString
 import play.api.libs.json.{JsValue, Json}
-import towers.model.ai.AIController
 
 
 
@@ -27,6 +26,7 @@ class TCPSocketServer(gameActor: ActorRef) extends Actor {
     case c: Connected =>
       println("Client Connected: " + c.remoteAddress)
       this.webServers = this.webServers + sender()
+
       sender() ! Register(self)
 
     case PeerClosed =>
@@ -46,6 +46,7 @@ class TCPSocketServer(gameActor: ActorRef) extends Actor {
 
     case gs: GameState =>
       this.webServers.foreach((client: ActorRef) => client ! Write(ByteString(gs.gameState + delimiter)))
+      //println(webServers.size)
   }
 
 
@@ -61,6 +62,8 @@ class TCPSocketServer(gameActor: ActorRef) extends Actor {
         val x = (message \ "x").as[Double]
         val y = (message \ "y").as[Double]
         gameActor ! MovePlayer(username, x, y)
+//      case "score" =>
+//        gameActor ! Score (username)
       case "stop" => gameActor ! StopPlayer(username)
     }
   }
@@ -82,10 +85,6 @@ object TCPSocketServer {
 
     actorSystem.scheduler.schedule(16.milliseconds, 32.milliseconds, gameActor, UpdateGame)
     actorSystem.scheduler.schedule(32.milliseconds, 32.milliseconds, server, SendGameState)
-
-
-    val ai = actorSystem.actorOf(Props(classOf[AIController], gameActor))
-    actorSystem.scheduler.schedule(100.milliseconds, 100.milliseconds, ai, Update)
   }
 
 }
