@@ -6,7 +6,7 @@ function checkAnswer (answer,list1,c) {
       score+= 5
     }
 }
-module.exports = checkAnswer;
+//module.exports = checkAnswer();
 //**testing for checkAnswer()**
 //var list1 = qAndA ();
 //shuffleAnsInList (list1)

@@ -1,7 +1,7 @@
 var answerid = "ggg";
 
 function myfunc(e){
-    var x = e.getAttribute('name');
+    var x = e.getAttribute("class");
     answerid = x;
     var l1 = document.getElementById("l1");
     var l2 = document.getElementById("l2");
@@ -38,6 +38,3 @@ function myfunc(e){
         l1.style.color = "black";
     }
 }
-
-
-
