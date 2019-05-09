@@ -1,5 +1,7 @@
+var name = ""
+
 function validateName() {
-    var name = document.getElementById("name1").value;
+  name = document.getElementById("name1").value;
 	var name1 = document.getElementById("name1");
     var set = document.getElementById("set");
     var vdiv = document.getElementById("divvalidate");
